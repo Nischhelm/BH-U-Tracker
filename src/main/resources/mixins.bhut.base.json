@@ -1,7 +1,7 @@
 {
   "required": true,
   "package": "brokenheart_undershirt_tracker.mixin.base",
-  "refmap": "mixins.brokenheart_undershirt.refmap.json",
+  "refmap": "mixins.brokenheart_undershirt_tracker.refmap.json",
   "compatibilityLevel": "JAVA_8",
   "target": "@env(DEFAULT)",
   "minVersion": "0.8",

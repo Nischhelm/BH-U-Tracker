@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import rlmixins.handlers.bountifulbaubles.BrokenHeartBaubleHandler;
 
 @Mixin(BrokenHeartBaubleHandler.class)
-public class BrokenheartActivated {
+public abstract class BrokenheartActivated {
     @Inject(
             method = "onFirstAidLivingDamageLow",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;playSound(Lnet/minecraft/entity/player/EntityPlayer;DDDLnet/minecraft/util/SoundEvent;Lnet/minecraft/util/SoundCategory;FF)V")

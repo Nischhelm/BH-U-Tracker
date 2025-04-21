@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(ItemTrinketBrokenHeart.class)
-public class BrokenheartActivated {
+public abstract class BrokenheartActivated {
     @Inject(
             method = "onDamage",
             at = @At(value = "INVOKE", target = "Lnet/minecraftforge/event/entity/living/LivingDamageEvent;setAmount(F)V"),

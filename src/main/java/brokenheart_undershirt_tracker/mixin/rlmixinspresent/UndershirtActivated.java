@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import rlmixins.handlers.reskillable.UndershirtHandler;
 
 @Mixin(UndershirtHandler.class)
-public class UndershirtActivated {
+public abstract class UndershirtActivated {
     @Inject(
             method = "onFirstAidLivingDamageHigh",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;playSound(Lnet/minecraft/entity/player/EntityPlayer;DDDLnet/minecraft/util/SoundEvent;Lnet/minecraft/util/SoundCategory;FF)V")

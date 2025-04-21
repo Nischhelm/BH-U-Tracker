@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(TraitUndershirt.class)
-public class UndershirtActivated {
+public abstract class UndershirtActivated {
     @Inject(
             method = "onHurt",
             at = @At(value = "INVOKE", target = "Lnet/minecraftforge/event/entity/living/LivingHurtEvent;setAmount(F)V"),
