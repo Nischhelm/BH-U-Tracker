@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "bhutracker.mixin.rlmixins",
+  "refmap": "mixins.bhutracker.refmap.json",
+  "compatibilityLevel": "JAVA_8",
+  "target": "@env(DEFAULT)",
+  "minVersion": "0.8",
+  "mixins": [
+    "BrokenHeartBaubleHandlerMixin",
+    "UndershirtHandlerMixin"
+  ],
+  "injectors": {
+    "maxShiftBy": 10
+  }
+}

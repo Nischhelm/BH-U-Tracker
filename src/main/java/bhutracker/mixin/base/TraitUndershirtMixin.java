@@ -1,6 +1,6 @@
-package brokenheart_undershirt_tracker.mixin.base;
+package bhutracker.mixin.base;
 
-import brokenheart_undershirt_tracker.util.Stats;
+import bhutracker.BrokenHeartUndershirtTracker;
 import codersafterdark.reskillable.skill.defense.TraitUndershirt;
 import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.entity.EntityLivingBase;
@@ -12,16 +12,15 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(TraitUndershirt.class)
-public abstract class UndershirtActivated {
+public class TraitUndershirtMixin {
+
     @Inject(
             method = "onHurt",
             at = @At(value = "INVOKE", target = "Lnet/minecraftforge/event/entity/living/LivingHurtEvent;setAmount(F)V"),
             remap = false
     )
-    public void trackUndershirtActivations(LivingHurtEvent event, CallbackInfo ci, @Local EntityLivingBase entity) {
-        if (entity instanceof EntityPlayer) {
-            EntityPlayer player = (EntityPlayer) entity;
-            player.addStat(Stats.UNDERSHIRT_ACTIVATED);
-        }
+    public void bhutracker_trackUndershirt(LivingHurtEvent event, CallbackInfo ci, @Local EntityLivingBase entity) {
+        if (entity instanceof EntityPlayer)
+            ((EntityPlayer) entity).addStat(BrokenHeartUndershirtTracker.UNDERSHIRT_ACTIVATED);
     }
 }
