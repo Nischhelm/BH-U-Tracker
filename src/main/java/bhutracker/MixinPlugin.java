@@ -1,20 +1,19 @@
-package brokenheart_undershirt_tracker;
-
-import fermiumbooter.FermiumRegistryAPI;
-import net.minecraftforge.fml.common.Loader;
-import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
-import org.spongepowered.asm.launch.MixinBootstrap;
+package bhutracker;
 
 import java.util.Map;
+import fermiumbooter.FermiumRegistryAPI;
+import net.minecraftforge.fml.common.Loader;
+import org.spongepowered.asm.launch.MixinBootstrap;
+import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 
 @IFMLLoadingPlugin.MCVersion("1.12.2")
-public class BrokenHeartUndershirtTrackerPlugin implements IFMLLoadingPlugin {
+public class MixinPlugin implements IFMLLoadingPlugin {
 
-	public BrokenHeartUndershirtTrackerPlugin() {
+	public MixinPlugin() {
 		MixinBootstrap.init();
 
-		FermiumRegistryAPI.enqueueMixin(true, "mixins.bhut.base.json", () -> !Loader.isModLoaded("rlmixins"));
-		FermiumRegistryAPI.enqueueMixin(true, "mixins.bhut.rlmixinspresent.json", () -> Loader.isModLoaded("rlmixins"));
+		FermiumRegistryAPI.enqueueMixin(true, "mixins.bhutracker.base.json", () -> !Loader.isModLoaded("rlmixins"));
+		FermiumRegistryAPI.enqueueMixin(true, "mixins.bhutracker.rlmixins.json", () -> Loader.isModLoaded("rlmixins"));
 	}
 
 	@Override

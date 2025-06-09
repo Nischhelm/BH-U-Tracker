@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "bhutracker.mixin.base",
+  "refmap": "mixins.bhutracker.refmap.json",
+  "compatibilityLevel": "JAVA_8",
+  "target": "@env(DEFAULT)",
+  "minVersion": "0.8",
+  "mixins": [
+    "ItemTrinketBrokenHeartMixin",
+    "TraitUndershirtMixin"
+  ],
+  "injectors": {
+    "maxShiftBy": 10
+  }
+}
